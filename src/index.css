@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,100 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gym-primary text-gym-light font-sans;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  .glass-effect {
+    @apply bg-opacity-20 backdrop-blur-lg bg-white border border-white border-opacity-20;
+  }
+  
+  .clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gym-primary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gym-accent rounded-full;
+  }
+  
+  /* Custom animations classes */
+  .fade-in-delay-1 {
+    animation: fade-in 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+  
+  .fade-in-delay-2 {
+    animation: fade-in 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  .fade-in-delay-3 {
+    animation: fade-in 0.8s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+    disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+  
+  .btn-primary {
+    @apply bg-gym-accent hover:bg-gym-accent/90 text-black font-semibold;
+  }
+  
+  .btn-outline {
+    @apply border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-gym-accent/10 text-gym-light;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold;
+  }
+  
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 text-gym-muted hover:text-gym-light relative after:absolute after:w-0 after:h-[2px] 
+    after:bg-gym-accent after:left-1/2 after:bottom-1 after:transform after:-translate-x-1/2 hover:after:w-1/2 
+    after:transition-all after:duration-300;
+  }
+
+  .nav-link.active {
+    @apply text-gym-light after:w-1/2;
   }
 }
