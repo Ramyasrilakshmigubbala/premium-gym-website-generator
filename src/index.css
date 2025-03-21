@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Fredoka+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-gym-primary text-gym-light font-sans;
+    @apply bg-squeeze-body text-squeeze-dark font-sans;
     scroll-behavior: smooth;
   }
 
@@ -116,11 +116,11 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-gym-primary;
+    @apply bg-squeeze-body;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-gym-accent rounded-full;
+    @apply bg-squeeze-accent rounded-full;
   }
   
   /* Custom animations classes */
@@ -152,15 +152,19 @@
   }
   
   .btn-primary {
-    @apply bg-gym-accent hover:bg-gym-accent/90 text-black font-semibold;
+    @apply bg-squeeze-primary hover:bg-squeeze-primary/90 text-white font-semibold;
+  }
+  
+  .btn-secondary {
+    @apply bg-squeeze-secondary hover:bg-squeeze-secondary/90 text-white font-semibold;
   }
   
   .btn-outline {
-    @apply border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black;
+    @apply border border-squeeze-primary text-squeeze-primary hover:bg-squeeze-primary hover:text-white;
   }
   
   .btn-ghost {
-    @apply hover:bg-gym-accent/10 text-gym-light;
+    @apply hover:bg-squeeze-primary/10 text-squeeze-dark;
   }
 
   .heading-xl {
@@ -180,12 +184,20 @@
   }
   
   .nav-link {
-    @apply px-4 py-2 text-gym-muted hover:text-gym-light relative after:absolute after:w-0 after:h-[2px] 
-    after:bg-gym-accent after:left-1/2 after:bottom-1 after:transform after:-translate-x-1/2 hover:after:w-1/2 
+    @apply px-4 py-2 text-squeeze-muted hover:text-squeeze-primary relative after:absolute after:w-0 after:h-[2px] 
+    after:bg-squeeze-primary after:left-1/2 after:bottom-1 after:transform after:-translate-x-1/2 hover:after:w-1/2 
     after:transition-all after:duration-300;
   }
 
   .nav-link.active {
-    @apply text-gym-light after:w-1/2;
+    @apply text-squeeze-primary after:w-1/2;
+  }
+
+  .product-card {
+    @apply bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .menu-item {
+    @apply flex justify-between items-center py-3 border-b border-dashed border-squeeze-muted/30 last:border-b-0;
   }
 }

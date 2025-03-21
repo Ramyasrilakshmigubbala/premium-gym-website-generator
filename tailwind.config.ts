@@ -63,13 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				gym: {
-					primary: '#111111',
-					secondary: '#f5f5f5',
-					accent: '#D5A353',
-					dark: '#0A0A0A',
-					light: '#FFFFFF',
-					muted: '#8A8A8A',
+				squeeze: {
+					primary: '#8BC34A',    // Fresh Lime Green
+					secondary: '#E91E63',  // Vibrant Pink
+					accent: '#FF9800',     // Orange
+					dark: '#212121',       // Dark Gray
+					light: '#FFFFFF',      // White
+					muted: '#757575',      // Medium Gray
+					red: '#F44336',        // Menu Red
+					yellow: '#FFEB3B',     // Menu Yellow
+					green: '#4CAF50',      // Fresh Green
+					body: '#FAFAFA',       // Light Background
 				}
 			},
 			borderRadius: {
@@ -109,6 +113,10 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -117,14 +125,16 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-in-up': 'fade-in-up 0.7s ease-out',
 				'pulse-subtle': 'pulse-subtle 4s infinite',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'spin-slow': 'spin-slow 15s linear infinite'
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 				display: ['Montserrat', 'system-ui', 'sans-serif'],
+				bubble: ['Fredoka One', 'cursive'], // Added playful font for milkshake shop
 			},
 			backgroundImage: {
-				'hero-pattern': "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5))",
+				'fruit-pattern': "url('/lovable-uploads/fa6aadfe-c388-4fdd-a3d8-5e1269ec8ca4.png')",
 			},
 		}
 	},
